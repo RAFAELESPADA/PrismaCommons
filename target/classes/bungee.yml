@@ -1,0 +1,4 @@
+name: PrismaBungee
+main: com.br.gabrielsilva.prismamc.commons.bungee.BungeeMain
+author: BiielBr
+version: 0.0.1

@@ -1,0 +1,13 @@
+MySQL:
+  Host: localhost
+  Porta: '3306'
+  Database: database
+  Usuario: root
+  Senha: ''
+Redis:
+  Host: 127.0.0.1
+  Senha: ''
+  Porta: 6379
+AutoMSG:
+  Minutos: 2
+Licenca: "000000000"

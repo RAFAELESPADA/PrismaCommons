@@ -1,0 +1,4 @@
+name: PrismaCommons
+main: com.br.gabrielsilva.prismamc.commons.bukkit.BukkitMain
+author: BiielBr
+version: 0.0.1
