@@ -85,19 +85,18 @@ public class BungeeMain extends Plugin {
 
 			new CommandLoader(new BungeeCommandFramework(getInstance())).loadCommandsFromPackage("com.br.gabrielsilva.prismamc.commons.bungee.commands.register");
 
-			for (String lines : FileLoader.load(new File(getInstance().getDataFolder(), "mensagens.txt"))) {
-				getManager().getMessages().add(lines.replaceAll("&", "�"));
-			}
+			getManager().getMessages().add("§6§lKOMBOPVP &fEncontrou algum §4§lCHEATER? §fUtilize /report <nick> <motivo>");
+			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fEntre no nosso §9§lDISCORD: §bhttps://discord.gg/DZsabJSKdB");
+			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fAplique-se para §d§lTRIAL §fEntre no discord: §bhttps://discord.gg/DZsabJSKdB");
+			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fCompre §aVip §fno nosso discord: §bhttps://discord.gg/DZsabJSKdB");
+			MotdListener.linha1 = "§6§lKOMBO§f§lPVP §bKITPVP, HG, GLADIATOR";
 
-			for (String lines : FileLoader.load(new File(getInstance().getDataFolder(), "motds.txt"))) {
-				if (lines.toLowerCase().startsWith("linha1:")) {
-					MotdListener.linha1 = lines.replaceAll("&", "�").replace("linha1:", "");
-				} else if (lines.toLowerCase().startsWith("linha2:")) {
-					MotdListener.linha2.add(lines.replace("&", "�").replace("linha2:", ""));
-				} else if (lines.toLowerCase().startsWith("linha2manutencao:")) {
-					MotdListener.manuten��o = lines.replaceAll("&", "�").replace("linha2manutencao:", " ");
-				}
-			}
+			MotdListener.linha2.add("§bVenha conhecer nosso KITPVP!");
+			MotdListener.linha2.add("§aVenha jogar HG!");
+			MotdListener.linha2.add("§eNovas atualizações!");
+			MotdListener.linha2.add("§fDiversão garantida!");
+			MotdListener.linha2.add("§fTreine seu PvP com Sopa!");
+			MotdListener.manutenção = "§cServidor em manutenção";
 
 			BungeeListeners.loadListeners(getInstance(), "com.br.gabrielsilva.prismamc.commons.bungee.listeners");
 			getManager().init();
