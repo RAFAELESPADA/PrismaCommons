@@ -86,7 +86,7 @@ public class BungeeMain extends Plugin {
 			new CommandLoader(new BungeeCommandFramework(getInstance())).loadCommandsFromPackage("com.br.gabrielsilva.prismamc.commons.bungee.commands.register");
 
 			getManager().getMessages().add("§6§lKOMBOPVP &fEncontrou algum §4§lCHEATER? §fUtilize /report <nick> <motivo>");
-			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fEntre no nosso §9§lDISCORD: §bhttps://discord.gg/DZsabJSKdB");
+			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fEntre no nosso §9§lDISCORD: §bhttps://discord.gg/yArGeWpFdE");
 			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fAplique-se para §d§lTRIAL §fEntre no discord: §bhttps://discord.gg/yArGeWpFdE");
 			getManager().getMessages().add("§6§lKOMBO§f§lPVP §fCompre §aVip §fno nosso discord: §bhttps://discord.gg/yArGeWpFdE");
 			MotdListener.linha1 = "§6§lKOMBO§f§lPVP §bKITPVP, HG, GLADIATOR";
