@@ -8,6 +8,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
 import com.br.gabrielsilva.prismamc.commons.bukkit.BukkitMain;
@@ -24,7 +28,7 @@ import com.br.gabrielsilva.prismamc.commons.core.utils.string.PluginMessages;
 import lombok.Getter;
 
 @Getter
-public class VanishManager {
+public class VanishManager implements Listener {
 
 	private static List<Player> invisiveis = new ArrayList<>(),
 			admin = new ArrayList<>();
@@ -32,9 +36,9 @@ public class VanishManager {
 	private static HashMap<UUID, ItemStack[]> itens = new HashMap<>(), 
 			armadura = new HashMap<>();
 	
-	public static final ItemStack JOGADORES_ONLINE = new ItemBuilder().material(Material.COMPASS).name("§aJogadores Online").build(),
-			JOGADORES_VIVOS = new ItemBuilder().material(Material.COMPASS).name("§aJogadores Vivos").build(),
-			FAST_ADMIN = new ItemBuilder().material(Material.SLIME_BALL).name("§aTroca Rápida").build();
+	public static final ItemStack JOGADORES_ONLINE = new ItemBuilder().material(Material.COMPASS).name("Â§aJogadores Online").build(),
+			JOGADORES_VIVOS = new ItemBuilder().material(Material.COMPASS).name("Â§aJogadores Vivos").build(),
+			FAST_ADMIN = new ItemBuilder().material(Material.SLIME_BALL).name("Â§aTroca RÃ¡pida").build();
 	
 	public static void esconder(Player player) {
 		if (invisiveis.contains(player)) {
@@ -51,7 +55,7 @@ public class VanishManager {
 			 }
 		}
 		
-		player.sendMessage(PluginMessages.PLAYER_FICOU_INVISIVEL.replace("%grupo%", tag.getColor() + "§l" + tag.getTag()));
+		player.sendMessage(PluginMessages.PLAYER_FICOU_INVISIVEL.replace("%grupo%", tag.getColor() + "Â§l" + tag.getTag()));
 		tag = null;
 		player = null;
 	}
@@ -199,6 +203,26 @@ public class VanishManager {
 			armadura.remove(uniqueId);
 		}
 	}
+	@EventHandler
+	/*     */   public void onInteractPlayerSlimeFun(PlayerInteractEvent e)
+		/*     */   {
+		/* 154 */     final Player p = e.getPlayer();
+		/* 155 */     if ((admin.contains(p)) && (
+				/* 156 */       (e.getAction() == Action.RIGHT_CLICK_BLOCK) || (e.getAction() == Action.RIGHT_CLICK_AIR)))
+			/*     */     {
+			/* 158 */       if (p.getItemInHand().getType() == Material.SLIME_BALL)
+				/*     */       {
+				/* 160 */         p.chat("/admin");
+				/* 161 */         Bukkit.getScheduler().scheduleSyncDelayedTask(BukkitMain.getInstance(), new Runnable()
+						/*     */         {
+					/*     */           public void run()
+					/*     */           {
+						/* 165 */             p.chat("/admin");
+						/*     */           }
+					/* 167 */         }, 10L);
+				/*     */       }
+			/*     */     }
+		/*     */   }
 	
 	public static boolean inAdmin(Player player) {
 		return admin.contains(player);
