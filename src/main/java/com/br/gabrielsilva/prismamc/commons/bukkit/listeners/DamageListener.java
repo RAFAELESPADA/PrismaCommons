@@ -84,19 +84,19 @@ public class DamageListener implements Listener {
 			}
 			if (name.contains("wood_sword")) ;
 			{
-				damageMaterial.put(materiais, 3.0D);
+				damageMaterial.put(materiais, 1.5D);
 			}
 			if (name.contains("stone_sword")) ;
 			{
-				damageMaterial.put(materiais, 3.5D);
+				damageMaterial.put(materiais, 2.0D);
 			}
 			if (name.contains("iron_sword")) ;
 			{
-				damageMaterial.put(materiais, 4.0D);
+				damageMaterial.put(materiais, 2.5D);
 			}
 			if (name.contains("diamond_sword")) ;
 			{
-				damageMaterial.put(materiais, 4.5D);
+				damageMaterial.put(materiais, 3.0D);
 
 			}
 		}
