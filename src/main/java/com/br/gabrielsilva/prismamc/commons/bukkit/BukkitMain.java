@@ -2,9 +2,11 @@ package com.br.gabrielsilva.prismamc.commons.bukkit;
 
 import java.io.File;
 
+import com.br.gabrielsilva.prismamc.commons.bukkit.api.player.VanishManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.br.gabrielsilva.prismamc.commons.bukkit.api.cooldown.CooldownAPI;
@@ -85,7 +87,7 @@ public class BukkitMain extends JavaPlugin {
 
 
 		if (getServerType() == ServerType.UNKNOWN) {
-			console("§cConfigure o tipo de servidor na config.");
+			console("Â§cConfigure o tipo de servidor na config.");
 			desligar();
 			return;
 		}
@@ -101,7 +103,7 @@ public class BukkitMain extends JavaPlugin {
 				loadCommandsFromPackage("com.br.gabrielsilva.prismamc.commons.bukkit.commands.register");
 
 		ListenerLoader.loadListenersBukkit(getInstance(), "com.br.gabrielsilva.prismamc.commons.bukkit.listeners");
-
+		Bukkit.getPluginManager().registerEvents(new VanishManager(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new MenuListener(), getInstance());
 		if (getServerType() == ServerType.HG || getServerType() == ServerType.EVENTO || getServerType() == ServerType.KITPVP) {
 			Bukkit.getServer().getPluginManager().registerEvents(new CooldownAPI(), getInstance());
