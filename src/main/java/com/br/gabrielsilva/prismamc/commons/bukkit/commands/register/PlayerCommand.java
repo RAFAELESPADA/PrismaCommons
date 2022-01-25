@@ -76,7 +76,7 @@ public class PlayerCommand implements CommandClass {
 		
 		if (args.length == 0) {
 			if (nick.equalsIgnoreCase("console")) {
-				commandSender.sendMessage("§cUtilize: /doublecoins <On/Off>");
+				commandSender.sendMessage("Â§cUtilize: /doublecoins <On/Off>");
 				return;
 			}
 			Player player = commandSender.getPlayer();
@@ -87,7 +87,7 @@ public class PlayerCommand implements CommandClass {
 				Player player = commandSender.getPlayer();
 				if (BukkitMain.getManager().getDataManager().getBukkitPlayer(player.getUniqueId()).getDataHandler().getData(DataType.GRUPO).getGrupo().getNivel() < 
 						Groups.ADMIN.getNivel()) {
-					player.sendMessage("§cVocê não tem permissão para usar este comando.");
+					player.sendMessage("Â§cVocÃª nÃ£o tem permissÃ£o para usar este comando.");
 					continuar = false;
 					return;
 				}
@@ -97,22 +97,22 @@ public class PlayerCommand implements CommandClass {
 			}
 			if (args[0].equalsIgnoreCase("on")) {
 				if (ServerOptions.isDoubleCoins()) {
-					commandSender.sendMessage("§cO DoubleCoins ja está ativado!");
+					commandSender.sendMessage("Â§cO DoubleCoins ja estÃ¡ ativado!");
 				} else {
-					commandSender.sendMessage("§aVocê ativou o DoubleCoins!");
+					commandSender.sendMessage("Â§aVocÃª ativou o DoubleCoins!");
 					ServerOptions.setDoubleCoins(true);
-					Bukkit.broadcastMessage("§eAgora este servidor dará o §6§lDOBRO §ede moedas.");
+					Bukkit.broadcastMessage("Â§eAgora este servidor darÃ¡ o Â§6Â§lDOBRO Â§ede moedas.");
 				}
 			} else if (args[0].equalsIgnoreCase("off")) {
 				if (!ServerOptions.isDoubleCoins()) {
-					commandSender.sendMessage("§cO DoubleCoins não está ativado!");
+					commandSender.sendMessage("Â§cO DoubleCoins nÃ£o estÃ¡ ativado!");
 				} else {
-					commandSender.sendMessage("§aVocê desativou o DoubleCoins!");
+					commandSender.sendMessage("Â§aVocÃª desativou o DoubleCoins!");
 					ServerOptions.setDoubleCoins(false);
-					Bukkit.broadcastMessage("§cAgora o servidor dará a quantia normal de moedas, DoubleCoins desativado.");
+					Bukkit.broadcastMessage("Â§cAgora o servidor darÃ¡ a quantia normal de moedas, DoubleCoins desativado.");
 				}
 			} else {
-				commandSender.sendMessage("§cUtilize: /doublecoins <On/Off>");
+				commandSender.sendMessage("Â§cUtilize: /doublecoins <On/Off>");
 			}
 		}
 	}
@@ -123,7 +123,7 @@ public class PlayerCommand implements CommandClass {
 		
 		if (args.length == 0) {
 			if (nick.equalsIgnoreCase("console")) {
-				commandSender.sendMessage("§cUtilize: /doublexp <On/Off>");
+				commandSender.sendMessage("Â§cUtilize: /doublexp <On/Off>");
 				return;
 			}
 			Player player = commandSender.getPlayer();
@@ -135,7 +135,7 @@ public class PlayerCommand implements CommandClass {
 				Player player = commandSender.getPlayer();
 				if (BukkitMain.getManager().getDataManager().getBukkitPlayer(player.getUniqueId()).getDataHandler().getData(DataType.GRUPO).getGrupo().getNivel() < 
 						Groups.ADMIN.getNivel()) {
-					player.sendMessage("§cVocê não tem permissão para usar este comando.");
+					player.sendMessage("Â§cVocÃª nÃ£o tem permissÃ£o para usar este comando.");
 					continuar = false;
 					return;
 				}
@@ -145,22 +145,22 @@ public class PlayerCommand implements CommandClass {
 			}
 			if (args[0].equalsIgnoreCase("on")) {
 				if (ServerOptions.isDoubleXP()) {
-					commandSender.sendMessage("§cO DoubleXP ja está ativado!");
+					commandSender.sendMessage("Â§cO DoubleXP ja estÃ¡ ativado!");
 				} else {
-					commandSender.sendMessage("§aVocê ativou o DoubleXP!");
+					commandSender.sendMessage("Â§aVocÃª ativou o DoubleXP!");
 					ServerOptions.setDoubleXP(true);
-					Bukkit.broadcastMessage("§bAgora este servidor dará o §lDOBRO §bde XP.");
+					Bukkit.broadcastMessage("Â§bAgora este servidor darÃ¡ o Â§lDOBRO Â§bde XP.");
 				}
 			} else if (args[0].equalsIgnoreCase("off")) {
 				if (!ServerOptions.isDoubleXP()) {
-					commandSender.sendMessage("§cO DoubleXP não está ativado!");
+					commandSender.sendMessage("Â§cO DoubleXP nÃ£o estÃ¡ ativado!");
 				} else {
-					commandSender.sendMessage("§aVocê desativou o DoubleXP!");
+					commandSender.sendMessage("Â§aVocÃª desativou o DoubleXP!");
 					ServerOptions.setDoubleXP(false);
-					Bukkit.broadcastMessage("§cDoubleXP desativado, quantia de XP distribuída normalizada.");
+					Bukkit.broadcastMessage("Â§cDoubleXP desativado, quantia de XP distribuÃ­da normalizada.");
 				}
 			} else {
-				commandSender.sendMessage("§cUtilize: /doublexp <On/Off>");
+				commandSender.sendMessage("Â§cUtilize: /doublexp <On/Off>");
 			}
 		}
 	}
@@ -208,32 +208,32 @@ public class PlayerCommand implements CommandClass {
 		
 		if (args.length == 0) {
 			player.sendMessage("");
-			player.sendMessage("§cUse: /tell <Nick> <Mensagem>");
-			player.sendMessage("§cUse: /tell <On/Off>");
+			player.sendMessage("Â§cUse: /tell <Nick> <Mensagem>");
+			player.sendMessage("Â§cUse: /tell <On/Off>");
 			player.sendMessage("");
 		} else if (args.length == 1) {
 			if (args[0].equalsIgnoreCase("on")) {
 				DataHandler dataHandler = BukkitMain.getManager().getDataManager().getBukkitPlayer(player.getUniqueId()).getDataHandler();
 				if (dataHandler.getBoolean(DataType.TELL)) {
-					player.sendMessage("§cSeu TELL ja está ativado.");
+					player.sendMessage("Â§cSeu TELL ja estÃ¡ ativado.");
 					return;
 				}
   			    dataHandler.getData(DataType.TELL).setValue(true);
- 			    player.sendMessage("§aMensagens privadas ativada!");
+ 			    player.sendMessage("Â§aMensagens privadas ativada!");
  	 			dataHandler.updateValues(DataCategory.PREFERENCIAS, true, DataType.TELL);
 			} else if (args[0].equalsIgnoreCase("off")) {
 				DataHandler dataHandler = BukkitMain.getManager().getDataManager().getBukkitPlayer(player.getUniqueId()).getDataHandler();
 				if (!dataHandler.getBoolean(DataType.TELL)) {
-					player.sendMessage("§cSeu TELL ja está desativado.");
+					player.sendMessage("Â§cSeu TELL ja estÃ¡ desativado.");
 					return;
 				}
   			    dataHandler.getData(DataType.TELL).setValue(false);
- 			    player.sendMessage("§aMensagens privadas desativada!");
+ 			    player.sendMessage("Â§aMensagens privadas desativada!");
  	 			dataHandler.updateValues(DataCategory.PREFERENCIAS, true, DataType.TELL);
 			} else {
 				player.sendMessage("");
-				player.sendMessage("§cUse: /tell <Nick> <Mensagem>");
-				player.sendMessage("§cUse: /tell <On/Off>");
+				player.sendMessage("Â§cUse: /tell <Nick> <Mensagem>");
+				player.sendMessage("Â§cUse: /tell <On/Off>");
 				player.sendMessage("");
 			}
 		} else {
@@ -248,7 +248,7 @@ public class PlayerCommand implements CommandClass {
 			return;
 		}
 		if (receiver == sender) {
-			sender.sendMessage("§cVocê não pode enviar mensagens para você mesmo.");
+			sender.sendMessage("Â§cVocÃª nÃ£o pode enviar mensagens para vocÃª mesmo.");
 			return;
 		}
 		
@@ -257,13 +257,13 @@ public class PlayerCommand implements CommandClass {
 		
 		if (VanishManager.isInvisivel(receiver)) {
 			if (bukkitPlayer.getDataHandler().getData(DataType.GRUPO).getGrupo().getNivel() <= Groups.TRIAL.getNivel()) {
-				sender.sendMessage("§cJogador offline!");
+				sender.sendMessage("Â§cJogador offline!");
 				return;
 			}
 		}
 		
 		if (!bukkitPlayer1.getBoolean(DataType.TELL)) {
-			sender.sendMessage("§cO jogador está com o TELL desativado!");
+			sender.sendMessage("Â§cO jogador estÃ¡ com o TELL desativado!");
 			return;
 		}
 		
@@ -314,12 +314,12 @@ public class PlayerCommand implements CommandClass {
 		
 		Player p = commandSender.getPlayer();
 		if (args.length == 0) {
-			p.sendMessage("§cUse: /r <Mensagem>");
+			p.sendMessage("Â§cUse: /r <Mensagem>");
 			return;
 		}
 		final BukkitPlayer bukkitPlayer = BukkitMain.getManager().getDataManager().getBukkitPlayer(p.getUniqueId());
 		if (bukkitPlayer.getLastMessage().equalsIgnoreCase("")) {
-			p.sendMessage("§cVocê não tem uma conversa para responder.");
+			p.sendMessage("Â§cVocÃª nÃ£o tem uma conversa para responder.");
 			return;
 		}
 		String lastConversation = bukkitPlayer.getLastMessage();
@@ -341,25 +341,25 @@ public class PlayerCommand implements CommandClass {
 		final PlayerRank liga = bukkitPlayer.getRank();
 		final int XP = bukkitPlayer.getInt(DataType.XP);	
 		
-		player.sendMessage("§a§lRanks gerais:");
+		player.sendMessage("Â§aÂ§lRanks gerais:");
 		player.sendMessage("");
 		for (int i = PlayerRank.values().length; i > 0; i--) {
 			 PlayerRank rank = PlayerRank.values()[i - 1];
 			 if (rank == liga) {
-				 player.sendMessage("§a§l* " + rank.getCor() + "§l" + rank.toString().replace("_", " ") + " §7(" + rank.getCor() + rank.getSimbolo() + "§7)");
+				 player.sendMessage("Â§aÂ§l* " + rank.getCor() + "Â§l" + rank.toString().replace("_", " ") + " Â§7(" + rank.getCor() + rank.getSimbolo() + "Â§7)");
 			 } else {
-				 player.sendMessage("§8§l* " + rank.getCor() + "§l" + rank.toString().replace("_", " ") + " §7(" + rank.getCor() + rank.getSimbolo() + "§7)");
+				 player.sendMessage("Â§8Â§l* " + rank.getCor() + "Â§l" + rank.toString().replace("_", " ") + " Â§7(" + rank.getCor() + rank.getSimbolo() + "Â§7)");
 			 }
 		}
 		
 		player.sendMessage("");
-		player.sendMessage("§fRank atual: " + liga.getCor() + "§l" + liga.toString().replace("_", ""));	
-		player.sendMessage("§fXP atual: §e" + XP);
+		player.sendMessage("Â§fRank atual: " + liga.getCor() + "Â§l" + liga.toString().replace("_", ""));	
+		player.sendMessage("Â§fXP atual: Â§e" + XP);
 		player.sendMessage("");
 		if (liga.ordinal() + 1 < PlayerRank.values().length) {
-			player.sendMessage("§fPróximo rank: §e" + StringUtils.reformularValor((liga.getMax() - XP)) + " XP");
+			player.sendMessage("Â§fPrÃ³ximo rank: Â§e" + StringUtils.reformularValor((liga.getMax() - XP)) + " XP");
 		} else {
-		    player.sendMessage("§fPróximo rank: §e0 XP");
+		    player.sendMessage("Â§fPrÃ³ximo rank: Â§e0 XP");
 		}
 		player.sendMessage("");
 	}
@@ -388,19 +388,19 @@ public class PlayerCommand implements CommandClass {
 				return;
 			}
 			if (!TagAPI.hasPermission(p, group)) {
-				p.sendMessage(PluginMessages.NÃO_POSSUI_TAG);
+				p.sendMessage(PluginMessages.NÃƒO_POSSUI_TAG);
 				return;
 			}
 			if (group == Groups.EVENTO && BukkitMain.getServerType() != ServerType.EVENTO) {
-				p.sendMessage("§cO uso desta TAG é exclusiva para o servidor de eventos.");
+				p.sendMessage("Â§cO uso desta TAG Ã© exclusiva para o servidor de eventos.");
 				return;
 			}
 			if (group == Groups.MEMBRO && BukkitMain.getServerType() == ServerType.EVENTO) {
-				p.sendMessage("§cO uso desta TAG não é permitida no servidor de eventos.");
+				p.sendMessage("Â§cO uso desta TAG nÃ£o Ã© permitida no servidor de eventos.");
 				return;
 			}
 			if (BukkitMain.getManager().getDataManager().getBukkitPlayer(p.getUniqueId()).getTag() == group.getTag()) {
-				p.sendMessage("§cVocê ja está utilizando esta TAG.");
+				p.sendMessage("Â§cVocÃª ja estÃ¡ utilizando esta TAG.");
 				return;
 			}
 			TagAPI.update(p, group);
@@ -423,15 +423,15 @@ public class PlayerCommand implements CommandClass {
 			 if (TagAPI.hasPermission(p, tag)) {
 				 tagAmount++;
 				 if (tags.equals("")) {
-					 tags = tag.getCor() + "§l" + tag.getNome().toUpperCase();
+					 tags = tag.getCor() + "Â§l" + tag.getNome().toUpperCase();
 				 } else {
-					 tags = tags + "§f, " + tag.getCor() + "§l" + tag.getNome().toUpperCase();
+					 tags = tags + "Â§f, " + tag.getCor() + "Â§l" + tag.getNome().toUpperCase();
 				 }
 			 }
 		}
-		tags = tags + "§f.";
+		tags = tags + "Â§f.";
 		p.sendMessage("");
-		p.sendMessage("§fSuas §6§lTAGS: (" + tagAmount + ")");
+		p.sendMessage("Â§fSuas Â§6Â§lTAGS: (" + tagAmount + ")");
 		p.sendMessage("");
 		p.sendMessage(tags);
 		p.sendMessage("");
@@ -483,17 +483,17 @@ public class PlayerCommand implements CommandClass {
 				player.sendMessage(PluginMessages.SCOREBOARD_DESATIVADA);
 			}
 		} else {
-			player.sendMessage("§cNenhuma ScoreBoard para remover...");
+			player.sendMessage("Â§cNenhuma ScoreBoard para remover...");
 		}
 	}
 	
 	@Command(name = "credits", aliases = {"criador"})
 	public void credits(BukkitCommandSender commandSender, String label, String[] args) {
 		commandSender.sendMessage("");
-		commandSender.sendMessage("§aPrecisa de algum Plugin? Compre já o seu!");
-		commandSender.sendMessage("§aentre em contato:");
-		commandSender.sendMessage("§bTwitter: §f@BiiielBr");
-		commandSender.sendMessage("§9Discord: §fBiielBr#9971");
+		commandSender.sendMessage("Â§aPrecisa de algum Plugin? Compre jÃ¡ o seu!");
+		commandSender.sendMessage("Â§aentre em contato:");
+		commandSender.sendMessage("Â§bTwitter: Â§f@BiiielBr");
+		commandSender.sendMessage("Â§9Discord: Â§fBiielBr#9971");
 		commandSender.sendMessage("");
 	}
 	
@@ -504,7 +504,7 @@ public class PlayerCommand implements CommandClass {
 		}
 		
 		if (true) {
-			commandSender.sendMessage("§cComando em manutenção.");
+			commandSender.sendMessage("Â§cComando em manutenÃ§Ã£o.");
 			return;
 		}
 		Player player = commandSender.getPlayer();
@@ -517,13 +517,13 @@ public class PlayerCommand implements CommandClass {
 		if (FakeAPI.requestChangeSkin(player)) {
 			BukkitPlayer bukkitPlayer = BukkitMain.getManager().getDataManager().getBukkitPlayer(player.getUniqueId());
 			if (!bukkitPlayer.podeTrocarSkin()) {
-				player.sendMessage("§cAguarde para trocar de Skin novamente!");
+				player.sendMessage("Â§cAguarde para trocar de Skin novamente!");
 				return;
 			}
 			
 			if (args[0].equalsIgnoreCase("atualizar")) {
 				bukkitPlayer.setLastChangeSkin(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(30));
-				player.sendMessage("§aBaixando skin...");
+				player.sendMessage("Â§aBaixando skin...");
 				
 				BukkitClient.sendPacket(player, new PacketBungeeUpdateField(bukkitPlayer.getNick(), "ProxyPlayer", "UpdateSkin", 
 		    					bukkitPlayer.getNick()));
@@ -531,13 +531,13 @@ public class PlayerCommand implements CommandClass {
 				bukkitPlayer.setLastChangeSkin(System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(30));
 				
 				if (!MySQLManager.contains("skins", "nick", args[0])) {
-					player.sendMessage("§aBaixando skin...");
+					player.sendMessage("Â§aBaixando skin...");
 				}
 				
 				BukkitClient.sendPacket(player, new PacketBungeeUpdateField(bukkitPlayer.getNick(), "ProxyPlayer", "SetSkinNew", args[0]));
 			}
 		} else {
-			player.sendMessage("§cVocê não pode trocar sua Skin agora!");
+			player.sendMessage("Â§cVocÃª nÃ£o pode trocar sua Skin agora!");
 		}
 	}
 	
@@ -627,16 +627,16 @@ public class PlayerCommand implements CommandClass {
 	    			BukkitMain.getManager().getDataManager().getBukkitPlayer(p.getUniqueId()).getDataHandler().getData(DataType.GRUPO).getGrupo();
 	    	
 			if (group.getNivel() < Groups.MOD.getNivel()) {
-				p.sendMessage("§cVocê não pode ver a lista de fakes.");
+				p.sendMessage("Â§cVocÃª nÃ£o pode ver a lista de fakes.");
 				return;
 			}
 			
 	    	if (FakeAPI.withFake.size() == 0) {
-	    		p.sendMessage("§cNenhum jogador com fake.");
+	    		p.sendMessage("Â§cNenhum jogador com fake.");
 	    		return;
 	    	}
 	    	p.sendMessage("");
-	    	p.sendMessage("§a§lFAKES:");
+	    	p.sendMessage("Â§aÂ§lFAKES:");
 	    	for (UUID fakes : FakeAPI.withFake) {
 	    		 Player target = Bukkit.getPlayer(fakes);
 	    		 if (target != null && target.isOnline()) {
@@ -649,15 +649,15 @@ public class PlayerCommand implements CommandClass {
 	    } else {
 	    	String nick = args[0];
 	    	if (nick.length() < 5) {
-				p.sendMessage("§cEste nick é muito pequeno!");
+				p.sendMessage("Â§cEste nick Ã© muito pequeno!");
 	    		return;
 	    	}
 	    	if (nick.length() > 16) {
-				p.sendMessage("§cEste nick é muito grande!");
+				p.sendMessage("Â§cEste nick Ã© muito grande!");
 	    		return;
 	    	}
 	    	if (!validString(nick)) {
-				p.sendMessage("§cEste nick contém caractéres não permitidos.");
+				p.sendMessage("Â§cEste nick contÃ©m caractÃ©res nÃ£o permitidos.");
 	    		return;
 	    	}
 			Player t = Bukkit.getPlayer(nick);
@@ -700,7 +700,7 @@ public class PlayerCommand implements CommandClass {
 			return;
 		}
 		
-		if (!commandSender.hasPermission("fly")) {
+		if (BukkitMain.getManager().getDataManager().getBukkitPlayer(commandSender.getUniqueId()).getDataHandler().getData(DataType.GRUPO).getGrupo().getNivel() < Groups.TRIAL.getNivel()) {
 			return;
 		}
     	changeFly(player, true);
@@ -715,13 +715,13 @@ public class PlayerCommand implements CommandClass {
 			player.setAllowFlight(false);
 			player.sendMessage(PluginMessages.FLY_DESATIVADO);
 			if (warn) {
-				ServerAPI.warnStaff("§7[" + StaffCommand.getRealNick(player) + " desativou o Fly]", Groups.ADMIN);
+				ServerAPI.warnStaff("Â§7[" + StaffCommand.getRealNick(player) + " desativou o Fly]", Groups.ADMIN);
 			}
 		} else {
 			player.setAllowFlight(true);
 			player.sendMessage(PluginMessages.FLY_ATIVADO);
 			if (warn) {
-				ServerAPI.warnStaff("§7[" + StaffCommand.getRealNick(player) + " ativou o Fly]", Groups.ADMIN);
+				ServerAPI.warnStaff("Â§7[" + StaffCommand.getRealNick(player) + " ativou o Fly]", Groups.ADMIN);
 			}
 		}
 	}
